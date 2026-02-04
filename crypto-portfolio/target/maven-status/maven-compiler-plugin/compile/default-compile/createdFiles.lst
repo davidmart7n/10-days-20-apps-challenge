@@ -1,0 +1,8 @@
+io\github\davidmart7n\cryptoportfolio\dto\AssetDTO.class
+io\github\davidmart7n\cryptoportfolio\dto\AssetMapper.class
+io\github\davidmart7n\cryptoportfolio\repository\AssetRepository.class
+io\github\davidmart7n\cryptoportfolio\domain\Asset.class
+io\github\davidmart7n\cryptoportfolio\service\AssetService.class
+io\github\davidmart7n\cryptoportfolio\CryptoPortfolioApplication.class
+io\github\davidmart7n\cryptoportfolio\web\AssetController.class
+io\github\davidmart7n\cryptoportfolio\dto\AssetDTO$AssetDTOBuilder.class
