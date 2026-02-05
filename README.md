@@ -38,7 +38,7 @@ I believe coding is a team sport. If you find this challenge interesting, I am *
 * **Want to optimize?** Open a **Pull Request** with improvements or refactors.
 * **Idea for a day?** Drop me an email or a message.
 
-Feel free to reach out via 📧 **[TU_EMAIL@EJEMPLO.COM]** or just open a PR. All feedback and collaborative spirits are more than welcome!
+Feel free to reach out via 📧 **[davidmartinencuentra@gmail.com]** or just open a PR. All feedback and collaborative spirits are more than welcome!
 
 ---
 
@@ -54,4 +54,4 @@ Feel free to reach out via 📧 **[TU_EMAIL@EJEMPLO.COM]** or just open a PR. Al
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](TU_LINK_LINKEDIN)
 
 ---
-*Fuelled by ☕, code, and the search for the next big challenge.*
+*Fuelled by ☕, code, music, and the search for the next big challenge.*
