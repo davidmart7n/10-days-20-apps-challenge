@@ -25,8 +25,9 @@ Building **2 functional applications every single day** for 10 consecutive days.
 | Day | Project 1 | Project 2 | Patterns & Tech | Infrastructure |
 |:---:|:---|:---|:---|:---|
 | **01** | [🚀 CryptoPortfolio API](https://github.com/davidmart7n/reto-apps/tree/main/day-01/crypto-portfolio) | [🔴 Pokedex Java](https://github.com/davidmart7n/reto-apps/tree/main/day-01/pokedex) | Clean Architecture, DTOs, HTTP Client | H2 Database, Jackson JSON, PokeApi |
-| **02** | [Upcoming Project 3](./Day-02/App-3) | [Upcoming Project 4](./Day-02/App-4) | TBD | TBD |
-| **03** | ... | ... | ... | ... |
+| **02** | [🛡️ NIO Async Defender](https://github.com/davidmart7n/10-days-20-apps-challenge/tree/main/day-02/nio-async-defender) | [🧠 Defender Brain](https://github.com/davidmart7n/10-days-20-apps-challenge/tree/main/day-02/defenderbrain) | Non-blocking I/O, Thread Pools, Microservices | Java NIO, Spring Boot, Jakarta Validation |
+| **03** | [Upcoming Project 5](./Day-03/App-5) | [Upcoming Project 6](./Day-03/App-6) | TBD | TBD |
+| **04** | ... | ... | ... | ... |
 
 
 ---
