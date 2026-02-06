@@ -6,7 +6,7 @@
 [![Angular](https://img.shields.io/badge/Angular-16%2B-red)](https://angular.io/)
 
 ## 📖 The Story Behind the Challenge
-I recently wrapped up my latest professional projects. While I have some days off, evaluating new opportunities and deciding where to bring my value next, I refused to stay idle.
+I recently wrapped up my latest professional projects. While I have some days off. I refused to stay idle.
 
 Instead, I’m turning this gap into a high-performance sprint. It’s a challenge to stay sharp and level up my skills, ensuring I return to my professional role with even stronger capabilities and a proven track record of rapid, clean delivery.
 
