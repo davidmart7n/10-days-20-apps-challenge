@@ -14,8 +14,8 @@ public class LogScanner {
 
     LogAnalyzer analyzer;
 
-    public LogScanner() {
-        analyzer = new LogAnalyzer();
+    public LogScanner(LogAnalyzer analyzer) {
+        this.analyzer = analyzer;
     }
 
     public void fileReader(String fileName) {
@@ -25,7 +25,7 @@ public class LogScanner {
             lines.forEach((line) -> {
 
                 AppConfig.getExecutor().submit(() -> {
-
+                    analyzer.securityAnalisis(line);
                     System.out.println(Thread.currentThread().getName() + "procesando log: " + line);
                 });
             });

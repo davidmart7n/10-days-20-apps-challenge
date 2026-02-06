@@ -24,27 +24,30 @@ public class LogAnalyzer {
     private final AtomicInteger detectedThreatsCount = new AtomicInteger(0);
     private final Map<String, Integer> attacksByIp = new ConcurrentHashMap<>();
 
-    private static final List<String> DANGEROUS_PATHS = List.of("/admin", "/.env", "/etc/passwd", "/phpmyadmin",
-            "/setup.cgi", "/shell.jsp");
-
+    private static final List<String> DANGEROUS_PATHS = List.of("/admin", "/.env", "/etc/passwd", "/phpmyadmin", "/setup.cgi", "/shell.jsp");
     private static final List<String> DANGEROUS_AGENTS = List.of("SqlMap", "Nmap", "ZGrab", "Go-http-client");
 
     public void securityAnalisis(String line) {
 
+        processedLinesCount.incrementAndGet();
         LogEntry entry = parseLine(line);
 
         if (isSuspicious(entry)) {
             System.out.println("🚨 ATAQUE DETECTADO: " + entry.ip());
+            detectedThreatsCount.incrementAndGet(); 
+            attacksByIp.merge(entry.ip(), 1, Integer::sum);
+
             try {
                 ObjectMapper mapper = new ObjectMapper();
                 String entryJson = mapper.writeValueAsString(entry);
                 HttpClient client = HttpClient.newHttpClient();
                 HttpRequest request = HttpRequest.newBuilder()
-                        .uri(URI.create("null"))
-                        .POST(BodyPublishers.ofString(entryJson))
-                        .build();
-                HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
+                            .uri(URI.create("http://localhost:8084/api/security-analyze"))
+                            .header("Content-Type", "application/json")
+                            .POST(BodyPublishers.ofString(entryJson))
+                            .build();
 
+                HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
                 handleAction(response.body(), entry.ip());
 
             } catch (Exception e) {
@@ -54,7 +57,6 @@ public class LogAnalyzer {
     }
 
     private boolean isSuspicious(LogEntry entry) {
-
         boolean badPath = DANGEROUS_PATHS.stream().anyMatch(entry.path()::contains) && entry.statusCode() >= 400;
         boolean badAgent = DANGEROUS_AGENTS.stream().anyMatch(entry.agent()::contains);
 
@@ -63,6 +65,9 @@ public class LogAnalyzer {
 
     private LogEntry parseLine(String line) {
         String[] parts = line.split(",");
+        if(processedLinesCount.get()>10){
+            System.out.println(line);
+        }
         return new LogEntry(parts[0], parts[1], parts[2], Integer.parseInt(parts[3]));
     }
 

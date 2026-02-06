@@ -1,5 +1,20 @@
 === DEFENDER SECURITY REPORT ===
-Total lines processed: 0
-Threats detected: 0
+Total lines processed: 1000
+Threats detected: 498
 ------------------------------------
 Top Attacking IPs:
+IP: 192.168.1.1 - Attempts: 26
+IP: 1.1.1.1 - Attempts: 39
+IP: 172.16.254.1 - Attempts: 26
+IP: 198.51.100.12 - Attempts: 31
+IP: 8.8.8.8 - Attempts: 45
+IP: 203.0.113.42 - Attempts: 31
+IP: 91.241.19.84 - Attempts: 31
+IP: 223.130.20.11 - Attempts: 33
+IP: 193.106.31.130 - Attempts: 34
+IP: 45.33.2.145 - Attempts: 23
+IP: 5.188.62.144 - Attempts: 40
+IP: 10.0.0.5 - Attempts: 35
+IP: 103.212.43.1 - Attempts: 30
+IP: 185.220.101.12 - Attempts: 43
+IP: 109.236.81.14 - Attempts: 31

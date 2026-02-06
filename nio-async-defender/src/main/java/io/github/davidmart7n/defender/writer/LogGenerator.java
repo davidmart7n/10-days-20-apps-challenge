@@ -42,10 +42,10 @@ public class LogGenerator {
 
                 StringBuilder stringBuilder = new StringBuilder();
 
-                stringBuilder.append(IPS.get(ipsRandom)).append(", ");
-                stringBuilder.append(PATHS.get(pathsRandom)).append(", ");
+                stringBuilder.append(IPS.get(ipsRandom)).append(",");
+                stringBuilder.append(PATHS.get(pathsRandom)).append(",");
                 stringBuilder.append(AGENTS.get(agentsRandom)).append(",");
-                stringBuilder.append(AGENTS.get(statusRandom)).append(",");
+                stringBuilder.append(STATUS_CODES.get(statusRandom));
 
                 writer.write(stringBuilder.toString());
                 writer.newLine();
