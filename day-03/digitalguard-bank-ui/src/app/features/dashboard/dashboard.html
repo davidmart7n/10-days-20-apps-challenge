@@ -1,1 +1,50 @@
-<p>dashboard works!</p>
+<div class="p-4 my-app-dark min-h-screen">
+  <p-toolbar styleClass="mb-4 bg-black-alpha-90 border-green-500">
+    <div class="p-toolbar-group-start">
+      <i class="pi pi-shield mr-2 text-2xl"></i>
+      <span class="text-xl font-bold uppercase tracking-widest">DigitalGuard Terminal</span>
+    </div>
+    <div class="p-toolbar-group-end">
+      <span class="mr-3 text-sm hidden md:inline">User: {{ 'ADMIN_USER' }}</span>
+      <p-button label="Cerrar Sesión" icon="pi pi-power-off" severity="danger" [outlined]="true" (onClick)="onLogout()" />
+    </div>
+  </p-toolbar>
+
+  <div class="grid">
+    <div class="col-12 md:col-4 mb-4">
+      <p-card header="Saldo Disponible" styleClass="border-left-3 border-green-500 bg-black-alpha-90">
+        <h1 class="text-green-500 m-0">1,579.50 €</h1>
+        <p class="text-gray-400 text-sm mt-2">Estado de cuenta: SEGURO</p>
+      </p-card>
+    </div>
+
+    <div class="col-12">
+      <p-card header="Últimas Transacciones" styleClass="bg-black-alpha-90">
+        <p-table [value]="transactions" [tableStyle]="{ 'min-width': '50rem' }">
+          <ng-template pTemplate="header">
+            <tr>
+              <th>Fecha</th>
+              <th>Descripción</th>
+              <th>Tipo</th>
+              <th class="text-right">Cantidad</th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-transaction>
+            <tr class="hover:bg-green-900">
+              <td>{{ transaction.date }}</td>
+              <td>{{ transaction.description }}</td>
+              <td>
+                <span [class]="transaction.amount > 0 ? 'text-green-400' : 'text-red-400'">
+                  {{ transaction.type }}
+                </span>
+              </td>
+              <td class="text-right font-mono" [class.text-green-500]="transaction.amount > 0">
+                {{ transaction.amount | number: '1.2-2' }} €
+              </td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </p-card>
+    </div>
+  </div>
+</div>

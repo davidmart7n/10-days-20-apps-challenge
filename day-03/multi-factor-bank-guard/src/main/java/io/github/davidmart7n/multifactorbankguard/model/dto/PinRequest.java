@@ -6,6 +6,4 @@ import lombok.Data;
 public class PinRequest {
     private String username;
     private String pin;
-
-
 }

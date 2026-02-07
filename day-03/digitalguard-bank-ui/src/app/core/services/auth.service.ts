@@ -7,7 +7,7 @@ import { Observable, tap } from "rxjs";
 export class AuthService{
 
     private readonly http = inject(HttpClient);
-    private readonly apiUrl = 'http://localhost8084/api/auth';
+    private readonly apiUrl = 'http://localhost:8084/api/auth';
 
     currentUserToken = signal<string | null>(localStorage.getItem('jwt_token'));
     isMfaRequired = signal<boolean>(false);
